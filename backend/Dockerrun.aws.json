@@ -1,0 +1,30 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "springBootExample",
+      "image": "sureshryali/spring-boot-app:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ],
+      "environment" :[
+		  {
+			  "name": "SPRING_DATASOURCE_URL" , 
+			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-cyf20sfvg2sq.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
+		  },
+		  {
+			  "name": "SPRING_FLYWAY_URL" , 
+			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-cyf20sfvg2sq.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
+		  }
+	  ]
+    }
+  ]
+}
+
+
+ 

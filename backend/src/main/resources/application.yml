@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-stacktrace: never
+    include-exception: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customer
+    username: amigoscode
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dielect: org.hibernate.dialect.PostgreSQLDialect
+        format-sql: true  
+    show-sql: true
+  flyway:
+    baseline-on-migrate: true 
+    user: amigoscode
+    password: password  
+  #  url: jdbc:postgresql://localhost:5432/customer
+  main:
+    web-application-type: servlet
+
+#docker run --name springBootExample --rm -p 8080:8080 --network spring-boot-example_db  sureshryali/spring-boot-app  --spring.datasource.url=jdbc:postgresql://db:5432/customer --spring.flyway.url=jdbc:postgresql://db:5432/customer
+#1633105/1Me$
