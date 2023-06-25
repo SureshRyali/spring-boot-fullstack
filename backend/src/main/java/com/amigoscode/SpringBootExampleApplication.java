@@ -35,6 +35,8 @@ public class SpringBootExampleApplication {
 					 firstName.toLowerCase() + "." + lastName.toLowerCase() + "@amigoscode.com" ,
 					random.nextInt(16, 85));
 			
+			
+			
 		//	repository.save(customer);
 		};
 	}
