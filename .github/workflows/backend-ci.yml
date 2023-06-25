@@ -1,11 +1,11 @@
-name: CI  - Build Backend
+name: CI - Build Backend
 
 on:
- pull_request: 
-   branches:
-     - "main"
-   paths:
-     - backend/**
+  pull_request:
+    branches:
+      - main
+    paths:
+      - backend/**
 
 jobs:
   build:
@@ -24,6 +24,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+
     defaults:
       run:
         working-directory: ./backend
@@ -34,6 +35,5 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
-      - name : Build And Run Unit Test/Integration Test With Maven      
-        run: mvn -ntp -B verify     
-          
+      - name: Build and run Unit/Integration Tests with Maven
+        run: mvn -ntp -B verify
