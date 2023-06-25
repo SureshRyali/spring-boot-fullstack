@@ -34,6 +34,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
-      - name : Build And Run Unit/Integration Test With Maven      
+      - name : Build And Run Unit Test/Integration Test With Maven      
         run: mvn -ntp -B verify     
           
