@@ -29,8 +29,8 @@ services:
     depends_on:
       - db
     restart: unless-stopped
-  spring-boot-app:
-    container_name: spring-boot-app
+  springBootExample:
+    container_name: springBootExample
     image: sureshryali/spring-boot-app
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer

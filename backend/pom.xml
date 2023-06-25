@@ -171,7 +171,7 @@
 					</from>
 					<to>
 						<image>
-							docker.io/${docker.username}/${docker.image.name}:${project.version}</image>
+							docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
 						<tags>
 							<tag>latest</tag>
 						</tags>
