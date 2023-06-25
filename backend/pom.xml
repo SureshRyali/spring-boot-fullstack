@@ -171,20 +171,22 @@
 					</from>
 					<to>
 						<image>
-							docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
+							docker.io/${docker.username}/${docker.image.name}:${project.version}
+						
+						</image>
 						<tags>
-							<tag>latest</tag>
+							<tag>atest</tag>
 						</tags>
 					</to>
 				</configuration>
-				<executions>
+				<!--<executions>
 						<execution>
 						<phase>package</phase>
 							<goals>
 								<goal>build</goal>
 							</goals>
 						</execution>
-					</executions>
+					</executions>-->
 			</plugin>
 		</plugins>
 	</build>
