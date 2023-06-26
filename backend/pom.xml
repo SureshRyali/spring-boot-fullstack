@@ -175,7 +175,7 @@
 							docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}
 						</image>
 						<tags>
-							<tag>atest</tag>
+							<tag>latest</tag>
 						</tags>
 					</to>
 				</configuration>
