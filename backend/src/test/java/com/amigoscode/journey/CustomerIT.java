@@ -199,9 +199,9 @@ public class CustomerIT {
 					.returnResult()
 					.getResponseBody();
 		
-		 Customer expected = new Customer(id, someName, email, age , Gender.MALE);
+		 Customer expected = new Customer(id, someName, email, age , gender);
 		assertThat(updatedCustomer).isEqualTo(expected );
-			
+		 assertThat(updatedCustomer).isEqualTo(expected);	
 	
 	}
 }
