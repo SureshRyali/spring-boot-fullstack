@@ -4,7 +4,9 @@ server:
     include-message: always
     include-stacktrace: never
     include-exception: true
-
+cors:
+  allowed-origins: "*"
+  allowed-methods: "*"
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/customer
