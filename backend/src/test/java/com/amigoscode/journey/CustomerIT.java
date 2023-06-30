@@ -200,7 +200,7 @@ public class CustomerIT {
 					.getResponseBody();
 		
 		 Customer expected = new Customer(id, someName, email, age , Gender.MALE);
-		assertThat(updatedCustomer).isNotEqualTo(expected );
+		assertThat(updatedCustomer).isEqualTo(expected );
 			
 	
 	}
