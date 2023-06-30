@@ -21,8 +21,9 @@ public class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
 
 	@Test
 	void selectAllCustomer() {
-		Customer customer = new Customer(FAKER.name().fullName(),
-				FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID(), 20);
+		Customer customer = new Customer(1, FAKER.name().fullName(),
+				FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID(),
+				20 , Gender.FEMALE);
 		underTest.insertCustometr(customer);
 		List<Customer> actual = underTest.selectAllCustomer();
 
@@ -30,8 +31,8 @@ public class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
 	}
 
 	void selectCustomerbyId() {
-		Customer customer = new Customer(FAKER.name().fullName(),
-				FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID(), 20);
+		Customer customer = new Customer(2 , FAKER.name().fullName(),
+				FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID(), 20 , Gender.MALE);
 		underTest.insertCustometr(customer);
 		Integer id = underTest.selectAllCustomer().stream().filter(c -> c.getEmail().equals(customer.getEmail()))
 				.map(Customer::getId).findFirst().orElseThrow();
@@ -65,8 +66,8 @@ public class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
 	void existsPersonWithEmail() {
 		String name = FAKER.name().fullName();
 		String email = FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID();
-		Customer customer = new Customer(name,
-				email, 20);
+		Customer customer = new Customer(1 ,name,
+				email, 20 , Gender.MALE);
 		underTest.insertCustometr(customer);
 		boolean actual = underTest.existsPersonWithEmail(email);
 		assertThat(actual).isTrue();
@@ -87,10 +88,11 @@ public class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainers {
 	void existsCustomerWithId() {
 		  // Given
         String email = FAKER.internet().safeEmailAddress() + "-" + UUID.randomUUID();
-        Customer customer = new Customer(
+        Customer customer = new Customer(1,
                 FAKER.name().fullName(),
                 email,
-                20);
+                20,
+                Gender.MALE);
 
         underTest.insertCustometr(customer);
 

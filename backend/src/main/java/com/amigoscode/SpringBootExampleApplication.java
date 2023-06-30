@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.amigoscode.customer.Customer;
 import com.amigoscode.customer.CustomerRepository;
+import com.amigoscode.customer.Gender;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
@@ -33,7 +34,7 @@ public class SpringBootExampleApplication {
 			
 			Customer customer = new Customer( firstName + " " + lastName,
 					 firstName.toLowerCase() + "." + lastName.toLowerCase() + "@amigoscode.com" ,
-					random.nextInt(16, 85));
+					random.nextInt(16, 85) , Gender.MALE);
 			
 			repository.save(customer);
 		};
@@ -41,3 +42,4 @@ public class SpringBootExampleApplication {
 }
 
 //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
+//lesson 262

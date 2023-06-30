@@ -14,9 +14,9 @@ private static List<Customer> customers;
 	
 	static {
 		customers = new ArrayList<>();
-		Customer customer1 = new Customer(1, "suresh", "test@test.com", 32);
+		Customer customer1 = new Customer(1, "suresh", "test@test.com", 32 , Gender.MALE);
 		customers.add(customer1);
-		Customer customer2 = new Customer(2, "baskar", "test2@test.com", 23);
+		Customer customer2 = new Customer(2, "baskar", "test2@test.com", 23 ,Gender.MALE);
 		customers.add(customer2);
 	}
 	@Override

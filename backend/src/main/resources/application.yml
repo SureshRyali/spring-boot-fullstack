@@ -24,7 +24,7 @@ spring:
     baseline-on-migrate: true 
     user: amigoscode
     password: password  
-  #  url: jdbc:postgresql://localhost:5432/customer
+    url: jdbc:postgresql://localhost:5432/customer
   main:
     web-application-type: servlet
 

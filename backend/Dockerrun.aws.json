@@ -15,11 +15,11 @@
       "environment" :[
 		  {
 			  "name": "SPRING_DATASOURCE_URL" , 
-			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-vpzhhosuvq8i.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
+			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-bwf0oifhiu5r.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
 		  },
 		  {
 			  "name": "SPRING_FLYWAY_URL" , 
-			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-vpzhhosuvq8i.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
+			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-bwf0oifhiu5r.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
 		  }
 	  ]
     }

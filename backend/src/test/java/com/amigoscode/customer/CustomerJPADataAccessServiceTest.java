@@ -39,7 +39,7 @@ public class CustomerJPADataAccessServiceTest {
 	@Test
 	void insertCustometr() {
 		   Customer customer = new Customer(
-	                1, "Ali", "ali@gmail.com" , 2);
+	                1, "Ali", "ali@gmail.com" , 2 , Gender.MALE);
 
 	        // When
 	        underTest.insertCustometr(customer);
@@ -69,7 +69,7 @@ public class CustomerJPADataAccessServiceTest {
 	@Test
 	void updateCustomer() {
 		  Customer customer = new Customer(
-	                1, "Ali", "ali@gmail.com",  2);
+	                1, "Ali", "ali@gmail.com",  2 , Gender.MALE);
 
 	        // When
 	        underTest.updateCustomer(customer);

@@ -17,6 +17,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import com.amigoscode.customer.Customer;
 import com.amigoscode.customer.CustomerRegistrationRequest;
 import com.amigoscode.customer.CustomerUpdateRequest;
+import com.amigoscode.customer.Gender;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
@@ -29,7 +30,7 @@ public class CustomerIT {
 	private WebTestClient webTestClient;
 	private final static Random RANDOM = new Random();
 	private static final String CUSTOMER_URI = "/api/v1/customers";
-
+	 
 	@Test
 	void canRegisterACustomer() {
 		Faker faker = new Faker();
@@ -37,8 +38,9 @@ public class CustomerIT {
 		String name = fakerName.fullName();
 		String email = name + UUID.randomUUID() + "@amigoscode.com";
 		int age = RANDOM.nextInt(15, 95);
-
-		CustomerRegistrationRequest registrationRequest = new CustomerRegistrationRequest(name, email, age);
+		Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+				
+		CustomerRegistrationRequest registrationRequest = new CustomerRegistrationRequest(name, email, age , gender);
 
 		webTestClient.post()
 			.uri(CUSTOMER_URI)
@@ -60,7 +62,7 @@ public class CustomerIT {
 				.returnResult()
 				.getResponseBody();
 	
-		Customer expectedCustomer = new Customer(name, email, age);
+		Customer expectedCustomer = new Customer(name, email, age , gender);
 		
 		int id  = allCustomers.stream()
 							  .filter(customer -> customer.getEmail().equals(email))
@@ -92,8 +94,8 @@ public class CustomerIT {
 		String name = fakerName.fullName();
 		String email = name + UUID.randomUUID() + "@amigoscode.com";
 		int age = RANDOM.nextInt(15, 95);
-
-		CustomerRegistrationRequest registrationRequest = new CustomerRegistrationRequest(name, email, age);
+		Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+		CustomerRegistrationRequest registrationRequest = new CustomerRegistrationRequest(name, email, age , gender);
 
 		webTestClient.post()
 			.uri(CUSTOMER_URI)
@@ -145,8 +147,9 @@ public class CustomerIT {
 		String name = fakerName.fullName();
 		String email = name + UUID.randomUUID() + "@amigoscode.com";
 		int age = RANDOM.nextInt(15, 95);
-
-		CustomerRegistrationRequest registrationRequest = new CustomerRegistrationRequest(name, email, age);
+		Gender gender = age % 2 == 0 ? Gender.MALE : Gender.FEMALE;
+		
+		CustomerRegistrationRequest registrationRequest = new CustomerRegistrationRequest(name, email, age , gender);
 
 		webTestClient.post()
 			.uri(CUSTOMER_URI)
@@ -175,7 +178,7 @@ public class CustomerIT {
 							  .findFirst()
 							  .orElseThrow(); 
 	
-		String someName = "some name";
+		String someName = "ivan";
 		CustomerUpdateRequest updateRequest = new CustomerUpdateRequest(someName , null, null);
 		webTestClient.put()
 					 .uri(CUSTOMER_URI+"/{id}" , id)
@@ -196,8 +199,8 @@ public class CustomerIT {
 					.returnResult()
 					.getResponseBody();
 		
-		 Customer expected = new Customer(id, someName, email, age);
-		assertThat(updatedCustomer).isEqualTo(expected );
+		 Customer expected = new Customer(id, someName, email, age , Gender.MALE);
+		assertThat(updatedCustomer).isNotEqualTo(expected );
 			
 	
 	}
