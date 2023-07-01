@@ -21,7 +21,6 @@
 		  {
 			  "name": "SPRING_FLYWAY_URL" , 
 			  "value": "jdbc:postgresql://awseb-e-9yyabgmdr3-stack-awsebrdsdatabase-bwf0oifhiu5r.cslrrs1d9q9x.ap-southeast-2.rds.amazonaws.com:5432/customer"
-			  
 		  }
 	  ]
     }

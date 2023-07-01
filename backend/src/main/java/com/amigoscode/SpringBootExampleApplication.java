@@ -20,7 +20,6 @@ public class SpringBootExampleApplication {
 		 SpringApplication.run(SpringBootExampleApplication.class, args);
 	}
 	
-	
 	@Bean
 	CommandLineRunner runner(CustomerRepository repository) {
 		
